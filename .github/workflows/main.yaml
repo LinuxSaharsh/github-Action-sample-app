@@ -34,3 +34,7 @@ jobs:
 
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/ci-cd-app:latest
+     
+      - name: Debug secrets
+        run: echo "Username = ${{ secrets.DOCKER_USERNAME != '' }}" && echo "Password = ${{ secrets.DOCKER_PASSWORD != '' }}"
+
